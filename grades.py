@@ -6,7 +6,10 @@ for name, assignment, grade in zip(names, assignments, grades):
     assignment = int(assignment)
     grade = float(grade)
     message = (f"Hi {name},\n\nThis is a reminder that you have {assignment} assignments left to "
-        f"submit before you can graduate. You're current grade is {grade} and can increase "
-        f"to {grade + 2* assignment} if you submit all assignments before the due date.\n\n"
+        f"submit before you can graduate. You're current grade is {grade}"
     )
+    if assignment > 0:
+        message += f" and can increase to {grade + 2* assignment} if you submit all assignments before the due date.\n\n"
+    else:
+        message += ".\n\n"
     print(message)
