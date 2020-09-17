@@ -1,6 +1,14 @@
-names = input("Please enter student names separated by commas: ").split(',')
-assignments = input("Please enter the corresponding number\nof missing assignments separated by commas: ").split(',')
-grades = input("Please enter the grades separated by commas: ").split(',')
+number_students = int(input("Enter the number of students: "))
+print("\n")
+
+names = list()
+assignments = list()
+grades = list()
+for _ in range(number_students):
+    names.append(input("Enter the student's name: "))
+    assignments.append(int(input("Enter the number of missing assignments: ")))
+    grades.append(float(input("Enter the current grade: ")))
+    print("\n")
 
 for name, assignment, grade in zip(names, assignments, grades):
     assignment = int(assignment)
@@ -13,3 +21,4 @@ for name, assignment, grade in zip(names, assignments, grades):
     else:
         message += ".\n\n"
     print(message)
+    print("----------------------------------------------------------")
